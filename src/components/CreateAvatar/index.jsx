@@ -5,6 +5,12 @@ import plusIcon from 'assets/plusBtn.svg';
 const CreateAvartar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const [selectedGender, setSelectedGender] = React.useState('');
+
+  const handleGenderChange = (event) => {
+    setSelectedGender(event.target.id);
+  };
+
   return (
     <S.Container>
       <S.AnswerWrapper>
@@ -20,7 +26,7 @@ const CreateAvartar = () => {
               세계관 작성<S.Star>*</S.Star>
             </S.WorldTypeTitle>
             <S.WorldTextInputWrapper>
-              <S.InputText />
+              <S.InputText type='text' />
             </S.WorldTextInputWrapper>
           </S.WorldTypeBox>
         </S.WorldTypeWrapper>
@@ -44,21 +50,74 @@ const CreateAvartar = () => {
                   </S.optionBox>
                 </div>
               </S.GenderWrapper>
+              <S.GenderWrapper2>
+                <div>
+                  <S.TextSubTitle>나이</S.TextSubTitle>
+                  <S.Input type='number' min='1' max='100' />
+                </div>
+              </S.GenderWrapper2>
+              <S.GenderWrapper2>
+                <div>
+                  <S.TextSubTitle>성별</S.TextSubTitle>
+                  <S.optionBox>
+                    <span style={{ marginRight: '5px' }}>인간</span>
+                    <S.StyledRadio type='radio' name='ratio' id='1' onClick={handleGenderChange} />
+                    <span style={{ marginRight: '5px', marginLeft: '10px' }}>인외</span>
+                    <S.StyledRadio type='radio' name='ratio' id='2' onClick={handleGenderChange} />
+                    <span style={{ marginRight: '5px', marginLeft: '10px' }}>이름: </span>
+                    <S.Input2 type='text' />
+                  </S.optionBox>
+                </div>
+              </S.GenderWrapper2>
+              {selectedGender === '2' && (
+                <S.GenderWrapper4>
+                  <S.TextSubTitle2>화풍</S.TextSubTitle2>
+                  <S.WorldTextInputWrapper2>
+                    <S.InputText2 type='text' />
+                  </S.WorldTextInputWrapper2>
+                </S.GenderWrapper4>
+              )}
+              <S.GenderWrapper3>
+                <S.TextSubTitle2>종족특성</S.TextSubTitle2>
+                <S.WorldTextInputWrapper>
+                  <S.InputText type='text' />
+                </S.WorldTextInputWrapper>
+              </S.GenderWrapper3>
+              <S.GenderWrapper3>
+                <S.TextSubTitle2>성격특성</S.TextSubTitle2>
+                <S.WorldTextInputWrapper>
+                  <S.InputText type='text' />
+                </S.WorldTextInputWrapper>
+              </S.GenderWrapper3>
+              <S.GenderWrapper3>
+                <S.TextSubTitle2>배경스토리</S.TextSubTitle2>
+                <S.WorldTextInputWrapper>
+                  <S.InputText type='text' />
+                </S.WorldTextInputWrapper>
+              </S.GenderWrapper3>
+              <S.ButtonWrapper>
+                <S.Button>만들기</S.Button>
+              </S.ButtonWrapper>
             </S.CharacterMainTitleWrapper>
           </S.CharacterInfo>
         ) : (
-          <S.PlusTextWrapper>
-            <S.PlusText>
-              <S.PlusImg
-                src={plusIcon}
-                alt=''
-                onClick={() => {
-                  setIsOpen(true);
-                }}
-              />
-              <S.Option>캐릭터 상세 설정 추가</S.Option>
-            </S.PlusText>
-          </S.PlusTextWrapper>
+          <>
+            <S.PlusTextWrapper>
+              <S.PlusText>
+                <S.PlusImg
+                  src={plusIcon}
+                  alt=''
+                  onClick={() => {
+                    setIsOpen(true);
+                  }}
+                />
+                <S.Option>캐릭터 상세 설정 추가</S.Option>
+              </S.PlusText>
+            </S.PlusTextWrapper>
+            <S.ButtonWrapper>
+              <S.Button>만들기</S.Button>
+            </S.ButtonWrapper>
+          </>
         )}
       </S.AnswerWrapper>
     </S.Container>

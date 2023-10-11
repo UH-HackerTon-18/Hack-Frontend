@@ -98,7 +98,13 @@ export const Star = styled.span`
 
 export const WorldTextInputWrapper = styled.div`
   width: 100%;
-  min-height: 20vh;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+`;
+export const WorldTextInputWrapper2 = styled.div`
+  width: 100%;
+  margin-top: 10px;
   display: flex;
   align-items: flex-end;
 `;
@@ -106,6 +112,15 @@ export const WorldTextInputWrapper = styled.div`
 export const InputText = styled.textarea`
   width: 100%;
   height: 15vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+`;
+
+export const InputText2 = styled.textarea`
+  width: 100%;
+  height: 2vh;
   border: 1px solid black;
   border-radius: 5px;
   resize: none;
@@ -172,13 +187,43 @@ export const CharacterTitle = styled.div`
 export const GenderWrapper = styled.div`
   width: 80%;
   margin: 0 auto;
-  height: 14vh;
+  height: 10vh;
   display: flex;
   align-items: center;
+  margin-top: 32px;
+`;
+
+export const GenderWrapper2 = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+`;
+export const GenderWrapper4 = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  height: 15vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const GenderWrapper3 = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const TextSubTitle = styled.div`
   font-weight: 600;
+`;
+
+export const TextSubTitle2 = styled.div`
+  font-weight: 600;
+  margin-top: 20px;
 `;
 
 export const optionBox = styled.div`
@@ -198,6 +243,49 @@ export const StyledRadio = styled.input`
   cursor: pointer;
 
   &:checked {
+    background-color: black;
+  }
+`;
+
+export const Input = styled.input`
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
+  min-height: 18px;
+  padding: 5px;
+`;
+
+export const Input2 = styled.input`
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+  width: 60px;
+  text-align: center;
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 80%;
+  height: 10vh;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Button = styled.div`
+  width: 450px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #272727;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
     background-color: black;
   }
 `;
