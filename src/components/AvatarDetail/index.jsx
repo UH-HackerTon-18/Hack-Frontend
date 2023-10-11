@@ -4,6 +4,7 @@ import Button from 'components/common/Button'
 import { AvatarCategoryData } from 'assets/data/AvatarCategoryData'
 
 function Category({ title, data }) {
+
     return (
         <S.CategoryWrapper>
             <S.CategoryTitle>{title}</S.CategoryTitle>
@@ -12,7 +13,8 @@ function Category({ title, data }) {
     )
 }
 
-export default function AvatarDetail({ }) {
+export default function AvatarDetail({ data }) {
+    console.log(data)
     return (
         <S.DetailTemplate>
             <S.AvatarDetailWrapper>
@@ -31,6 +33,7 @@ export default function AvatarDetail({ }) {
                         <Category
                             title={item.name}
                             data="미정"
+                            key={item.name}
                         />
                     ))}
                 </S.CategoryListWrapper>
