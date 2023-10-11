@@ -13,7 +13,6 @@ function Category({ title, data }) {
 }
 
 export default function AvatarDetail({ }) {
-
     return (
         <S.DetailTemplate>
             <S.AvatarDetailWrapper>
@@ -57,7 +56,8 @@ export default function AvatarDetail({ }) {
                         borderRadius="5"
                         onClick={() => { }}
 
-                    >오픈API로 사용하기</Button> <Button
+                    >오픈API로 사용하기</Button>
+                    <Button
                         backgroundColor="#FFF"
                         color="#272727"
                         fontWeight="800"
