@@ -1,17 +1,10 @@
-import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import * as P from "../pages";
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function Router() {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-
-    }, [navigate]);
-
-    return (
-        <Routes>
-            {/* <Route path="" element={ } /> */}
-        </Routes>
-    )
+  return (
+    <BrowserRouter>
+      <Routes>{/* <Route path="" element={ } /> */}</Routes>
+    </BrowserRouter>
+  );
 }
