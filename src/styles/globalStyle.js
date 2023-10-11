@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import color from 'styles/color';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -87,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
   list-style: none;
   text-decoration: none;
   font-family: Pretendard;
+  color:${color.black[100]}
 }
 
 input {
@@ -94,6 +96,9 @@ input {
 	outline: none;
 }
 
+body {
+  background-color: ${color.gray[100]};
+}
 `;
 
 export default GlobalStyle;

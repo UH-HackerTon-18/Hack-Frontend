@@ -1,11 +1,10 @@
-import Header from 'components/Header';
-import CreateAvatar from 'components/CreateAvatar';
-
+import GlobalStyle from './styles/globalStyle';
+import Router from 'router';
 function App() {
   return (
     <>
-      <Header />
-      <CreateAvatar />
+      <GlobalStyle />
+      <Router />
     </>
   );
 }
