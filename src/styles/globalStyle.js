@@ -12,6 +12,7 @@ input {
   border: none;
 	outline: none;
 }
+
 `;
 
 export default GlobalStyle;
