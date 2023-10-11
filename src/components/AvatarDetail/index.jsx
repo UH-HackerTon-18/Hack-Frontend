@@ -16,7 +16,7 @@ function Category({ title, data }) {
 
 
 export default function AvatarDetail({ data }) {
-    const { id, name, gender, age, job, character, relation } = data;
+    const { id, relation } = data;
 
     return (
         <S.DetailTemplate>
@@ -35,7 +35,7 @@ export default function AvatarDetail({ data }) {
                     {AvatarCategoryData.map((item) => (
                         <Category
                             title={item.name}
-                            data="미정"
+                            data={data[item.value]}
                             key={item.name}
                         />
                     ))}

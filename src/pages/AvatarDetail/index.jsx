@@ -2,10 +2,10 @@ import AvatarDetail from "components/AvatarDetail"
 import { useParams } from "react-router-dom"
 import useFetch from "hooks/useFetch";
 import { useEffect } from "react";
-
+import { isNotNull } from "utils/isNotNull";
 export default function AvatarDetailPage() {
     let { id } = useParams();
-    const { fetch, data } = useFetch({
+    const { isLoading, fetch, data } = useFetch({
         method: 'get',
         url: `/world/${id}`
     });
@@ -13,10 +13,12 @@ export default function AvatarDetailPage() {
     useEffect(() => {
         fetch();
     }, [id])
-
+    console.log(data)
     return (
         <>
-            <AvatarDetail data={data} />
+            {
+                !isLoading && isNotNull(data) ? <AvatarDetail data={data} /> : null
+            }
         </>
     )
 }
