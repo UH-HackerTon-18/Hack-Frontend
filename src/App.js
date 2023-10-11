@@ -1,13 +1,5 @@
-import Header from 'components/Header';
-import CreateAvatar from 'components/CreateAvatar';
-
 function App() {
-  return (
-    <>
-      <Header />
-      <CreateAvatar />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
