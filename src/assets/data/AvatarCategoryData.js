@@ -10,15 +10,10 @@ export const AvatarCategoryData = [
         name:"성"
     },
     {
-        name:"종족"
-    },
-    {
-        name:"종족 특성"
-    },
-    {
+        job:"직업"
+    },{
+  
         name:"성격"
     },
-    {
-        name:"배경"
-    },
+   
 ]

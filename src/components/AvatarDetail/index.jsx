@@ -13,8 +13,11 @@ function Category({ title, data }) {
     )
 }
 
+
+
 export default function AvatarDetail({ data }) {
-    console.log(data)
+    const { id, name, gender, age, job, character, relation } = data;
+
     return (
         <S.DetailTemplate>
             <S.AvatarDetailWrapper>
