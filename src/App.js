@@ -1,5 +1,13 @@
+import Header from 'components/Header';
+import CreateAvatar from 'components/CreateAvatar';
+
 function App() {
-  return <div className='App'></div>;
+  return (
+    <>
+      <Header />
+      <CreateAvatar />
+    </>
+  );
 }
 
 export default App;
