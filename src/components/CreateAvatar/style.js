@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  background-color: ${color[100]};
+  background-color: ${color.gray[100]};
 `;
 
 export const AnswerWrapper = styled.div`
@@ -35,10 +35,28 @@ export const MainTitle = styled.div`
 
 export const Title = styled.div`
   font-size: 1.8rem;
+  font-weight: 800;
+`;
+
+export const Title2 = styled.div`
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 0.65rem;
+  margin-bottom: 0.5rem;
+`;
+
+export const TextTitle = styled.div`
+  width: 100%;
+  height: 80%;
 `;
 
 export const SubTitle = styled.div`
   font-size: 1.125rem;
+`;
+
+export const SubTitle2 = styled.div`
+  font-size: 1rem;
+  color: ${color.gray[300]};
 `;
 
 export const WorldTypeWrapper = styled.div`
@@ -70,6 +88,7 @@ export const WorldTypeTitle = styled.div`
   align-items: center;
   font-size: 1.3rem;
   padding-bottom: 0.5rem;
+  font-weight: 600;
 `;
 
 export const Star = styled.span`
@@ -143,8 +162,42 @@ export const CharacterTitle = styled.div`
   width: 80%;
   height: 12vh;
   margin: 0 auto;
-  background-color: blue;
   border-bottom: 1px solid black;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+`;
+
+export const GenderWrapper = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  height: 14vh;
+  display: flex;
+  align-items: center;
+`;
+
+export const TextSubTitle = styled.div`
+  font-weight: 600;
+`;
+
+export const optionBox = styled.div`
+  margin: 10px 0 0 10px;
+`;
+
+export const StyledRadio = styled.input`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #000;
+  border-radius: 0;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+
+  &:checked {
+    background-color: black;
+  }
 `;

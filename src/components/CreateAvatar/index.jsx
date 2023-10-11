@@ -27,7 +27,23 @@ const CreateAvartar = () => {
         {isOpen ? (
           <S.CharacterInfo>
             <S.CharacterMainTitleWrapper>
-              <S.CharacterTitle>sdf</S.CharacterTitle>
+              <S.CharacterTitle>
+                <S.TextTitle>
+                  <S.Title2>캐릭터 상세 설정 - 선택</S.Title2>
+                  <S.SubTitle2>모든 옵션들은 전부 선택사항 이므로 다 작성하지 않아도 됩니다</S.SubTitle2>
+                </S.TextTitle>
+              </S.CharacterTitle>
+              <S.GenderWrapper>
+                <div>
+                  <S.TextSubTitle>성별</S.TextSubTitle>
+                  <S.optionBox>
+                    <span style={{ marginRight: '5px' }}>남성</span>
+                    <S.StyledRadio type='radio' name='ratio' />
+                    <span style={{ marginRight: '5px', marginLeft: '10px' }}>여성</span>
+                    <S.StyledRadio type='radio' name='ratio' />
+                  </S.optionBox>
+                </div>
+              </S.GenderWrapper>
             </S.CharacterMainTitleWrapper>
           </S.CharacterInfo>
         ) : (

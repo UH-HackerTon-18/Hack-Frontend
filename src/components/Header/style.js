@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const HeaderWrapper = styled.div`
   width: 100%;
   min-height: 9vh;
-  border-bottom: 1px solid ${color[200]};
+  border-bottom: 1px solid ${color.gray[200]};
 `;
 
 export const HeaderLogoWrapper = styled.div`
