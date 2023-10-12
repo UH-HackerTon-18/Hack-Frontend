@@ -55,6 +55,7 @@ width: 16%;
 export const CategoryData = styled.div`
 font-weight: 400;
 color: ${color.gray[300]};
+
 `
 export const subTitle = styled.div`
 margin-top: 60px;
@@ -77,3 +78,44 @@ export const ButtonListWrapper = styled.div`
     gap: 0.6rem;
 `
 
+export const relationWrapper = styled.div`
+display: flex;
+flex-direction: column;
+gap: 0.7rem;
+`
+
+
+export const RelationBotItemWrapper = styled.div`
+cursor: pointer;
+display: flex;
+flex-direction: row;
+`
+
+export const RelationImgWrapper = styled.div`
+width: 50px;
+height: 50px;
+background-color: antiquewhite;
+img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+`
+
+
+export const RelationCategoryListWrapper = styled.div`
+display: flex;
+flex-direction: column;
+gap: 0.3rem;
+`
+
+export const RelationCategoryTitle = styled.div`
+font-weight: 800;
+font-size: 16px;
+width: 30px;
+`
+
+export const RelationCategoryData = styled.div`
+font-weight: 400;
+color: ${color.gray[300]};
+`

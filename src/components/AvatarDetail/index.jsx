@@ -15,6 +15,26 @@ function Category({ title, data }) {
     )
 }
 
+function RelationBotItem({ id, profile_image_url, name, explain, navigate }) {
+    return (
+        <S.RelationBotItemWrapper onClick={() => navigate(`avatar/${id}`)}>
+            <S.RelationImgWrapper>
+                <img src={profile_image_url} alt='실패' />
+            </S.RelationImgWrapper>
+            <S.RelationCategoryListWrapper>
+                <S.CategoryWrapper>
+                    <S.RelationCategoryTitle>이름</S.RelationCategoryTitle>
+                    <S.RelationCategoryData>{name}</S.RelationCategoryData>
+                </S.CategoryWrapper>
+                <S.CategoryWrapper>
+                    <S.RelationCategoryTitle>관계</S.RelationCategoryTitle>
+                    <S.RelationCategoryData>{explain}</S.RelationCategoryData>
+                </S.CategoryWrapper>
+            </S.RelationCategoryListWrapper>
+        </S.RelationBotItemWrapper>
+    )
+}
+
 
 
 export default function AvatarDetail({ data }) {
@@ -42,6 +62,16 @@ export default function AvatarDetail({ data }) {
                         key={item.name}
                     />
                 ))}
+                <S.CategoryWrapper>
+                    <S.CategoryTitle>관계</S.CategoryTitle>
+                    <S.relationWrapper>
+                        {
+                            relation.map((i) => (
+                                <RelationBotItem id={i.id} profile_image_url={i.profile_image_url} name={i.name} explain={i.explain} navigate={navigate} />
+                            ))
+                        }
+                    </S.relationWrapper>
+                </S.CategoryWrapper>
             </S.CategoryListWrapper>
             <S.ButtonListWrapper>
                 <Button
