@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   background-color: ${color.gray[100]};
+  padding-top: 9vh;
 `;
 
 export const AnswerWrapper = styled.div`
@@ -251,6 +252,7 @@ export const StyledRadio = styled.input`
   display: inline-block;
   margin-right: 8px;
   cursor: pointer;
+  border-radius: 3px;
 
   &:checked {
     background-color: black;
@@ -264,6 +266,7 @@ export const Input = styled.input`
   width: 50px;
   min-height: 18px;
   padding: 5px;
+  border-radius: 5px;
 `;
 
 export const Input2 = styled.input`

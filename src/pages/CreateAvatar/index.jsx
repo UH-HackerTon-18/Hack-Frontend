@@ -1,10 +1,11 @@
 import React from 'react';
 import * as S from './style';
 import plusIcon from 'assets/plusBtn.svg';
-import instance from 'apis/httpClient';
 import { useMutation } from 'react-query';
 import LoadingPage from 'pages/LodingPage';
 import { toast } from 'react-toastify';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CreateAvartar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -66,41 +67,50 @@ const CreateAvartar = () => {
 
   const trueGender = gender === '0' ? '여성' : '남성';
 
+  const instance = axios.create({
+    baseURL: 'http://192.168.7.115:3000/characters',
+    timeout: 120000,
+  });
+
   const postCode = async (userInfo) => {
-    await instance.post('http://192.168.199.171:3000/characters/', userInfo);
+    return await instance.post('/', userInfo);
   };
 
-  const { mutate, isLoading, isError } = useMutation(postCode, {
+  const generated = () => {
+    const userInfo = {
+      character_count: countCharacter,
+      world_story: worldText,
+      main_character: {
+        species: species2,
+        species_explain: character,
+        style: style,
+        name,
+        gender: trueGender,
+        age,
+        character: kind,
+        background_story: backGroundStory,
+      },
+    };
+
+    mutate(userInfo);
+  };
+
+  const navigate = useNavigate();
+
+  const { mutate, isLoading } = useMutation(postCode, {
     onSuccess: (data) => {
-      console.log(data);
+      const id = data.data.world_id;
+      console.log(data.data.world_id);
+      navigate(`/completeAvartar/${id}`);
+      toast.success('캐릭터 생성 성공!');
     },
-    onError: () => {
-      toast.success('캐릭터 생성 완료!');
+    onError: (error) => {
+      console.log(error);
+      toast.error('캐릭터 생성 실패!');
     },
   });
 
   if (isLoading) return <LoadingPage />;
-
-  const generated = async () => {
-    try {
-      const userInfo = {
-        character_count: countCharacter,
-        world_story: worldText,
-        main_character: {
-          species: species2,
-          species_explain: character,
-          style: style,
-          name,
-          gender: trueGender,
-          age,
-          character: kind,
-          background_story: backGroundStory,
-        },
-      };
-
-      mutate(userInfo);
-    } catch (error) {}
-  };
 
   return (
     <S.Container>

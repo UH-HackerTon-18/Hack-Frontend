@@ -97,7 +97,8 @@ input {
 }
 
 body {
-  background-color: ${color.gray[100]}
+  background-color: ${color.gray[100]};
+  
 }
 `;
 

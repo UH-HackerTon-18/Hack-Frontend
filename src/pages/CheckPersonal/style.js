@@ -1,12 +1,16 @@
 import { styled } from 'styled-components';
 import color from 'styles/color';
 
+export const BackGround = styled.div`
+  width: 100%;
+  height: 110vh;
+  padding-top: 15vh;
+`;
 export const Container = styled.div`
   width: 60%;
   min-height: 90vh;
   flex-shrink: 0;
   margin: 0 auto;
-  margin-top: 30px;
   margin-bottom: 80px;
   border-radius: 10px;
   background-color: white;
@@ -47,7 +51,7 @@ export const CharacterMapWrapper = styled.div`
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;
 `;
 
 export const CharacterBox = styled.div`
@@ -71,7 +75,7 @@ export const ButtonBox = styled.div`
 `;
 
 export const CharacterWrapper = styled.div`
-  width: 94%;
+  width: 95%;
   min-height: 8vh;
   display: flex;
   justify-content: space-between;
@@ -92,10 +96,9 @@ export const CharacterImg = styled.img`
 `;
 
 export const CharacterName = styled.div`
-  width: 40%;
+  width: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: 63px;
   font-size: 18px;
   font-weight: 600;

@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
   min-height: 9vh;
   border-bottom: 1px solid ${color.gray[200]};
   background-color: white;
+  position: fixed;
 `;
 
 export const HeaderLogoWrapper = styled.div`
