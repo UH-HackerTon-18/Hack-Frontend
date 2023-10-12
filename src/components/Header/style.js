@@ -23,11 +23,25 @@ export const HeaderTextWrapper = styled.div`
 `;
 
 export const NavigateTextWrapper = styled.div`
-  width: 912px;
+  width: 870px;
   min-height: 9vh;
-  margin-left: 5.5%;
+  margin-left: 7.5%;
+  display: flex;
 `;
 
 export const ImgLogo = styled.img`
   cursor: pointer;
+`;
+
+export const TextBox = styled.div`
+  width: 16%;
+  min-height: 9vh;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+`;
+
+export const Text = styled.div`
+  cursor: pointer;
+  font-size: 17px;
 `;

@@ -156,6 +156,7 @@ export const PlusImg = styled.img`
 
 export const Option = styled.div`
   margin-left: 5px;
+  font-weight: 600;
 `;
 
 export const CharacterInfo = styled.div`
