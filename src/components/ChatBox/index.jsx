@@ -1,37 +1,69 @@
 import Container from "components/common/Container";
 import * as S from "./style";
 import TitleBox from "components/common/TitleBox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "components/common/Button";
 import sendSvg from '../../assets/send.svg'
-import { useRecoilState } from "recoil";
-import { avatarState } from "store/atoms";
 import TextareaAutosize from 'react-textarea-autosize';
 import outSvg from "../../assets/out.svg"
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChatWrapper, BotChatWrapper } from "components/common/ChatItem";
+import useFetch from "hooks/useFetch";
 
+export default function ChatBox({ id, name, src }) {
 
-export default function ChatBox({ id }) {
-    const [AiState, setAiState] = useRecoilState(avatarState);
+    const { isLoading, fetch, data, isFail } = useFetch({
+        method: 'post',
+        url: `/chat/${id}`
+    });
+    useEffect(() => {
+        if (!isLoading && !isFail && data) {
+            setChatList([...chatList, {
+                writer: name,
+                value: data.response,
+                date: ""
+            }])
+            if (isFail) {
+                setChatList([...chatList, {
+                    writer: "Error",
+                    value: "다시 시도해 주세요.",
+                    date: ""
+                }])
+            }
+        }
+    }, [isLoading, isFail])
 
     const [chatList, setChatList] = useState([]);
     const [chatInput, setchatInput] = useState('');
     const navigate = useNavigate();
 
     const sendMessage = () => {
-        const date = new Date();
         setChatList([...chatList, {
             writer: "user",
             value: chatInput,
             date: ""
         }])
+
+        fetch({
+            prompt: chatInput
+        })
         setchatInput("")
     }
 
     const outPage = () => {
         navigate(`/avatar/${id}`);
     }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter' && e.shiftKey) {
+            setchatInput(chatInput + '\n')
+            console.log("Senter")
+
+        } else if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    };
 
     return (
         <Container>
@@ -41,12 +73,12 @@ export default function ChatBox({ id }) {
                 <S.ChatListWrapper>
                     {
                         chatList && chatList.map((i) => (
-                            i.writer === "user" ? <ChatWrapper value={i.value} /> : <BotChatWrapper value={i.value} name={AiState.name} />
+                            i.writer === "user" ? <ChatWrapper value={i.value} /> : <BotChatWrapper value={i.value} name={name} src={src} />
                         ))
                     }
                 </S.ChatListWrapper>
                 <S.ChatInputWrapper>
-                    <TextareaAutosize className="ChatInput" maxRows={6} minRows={1} cacheMeasurements={true} value={chatInput} onChange={(e) => { setchatInput(e.target.value) }} />
+                    <TextareaAutosize className="ChatInput" onKeyDown={handleKeyPress} maxRows={6} minRows={1} cacheMeasurements={true} value={chatInput} onChange={(e) => { setchatInput(e.target.value) }} />
                     <Button
                         width="40"
                         height="40"
