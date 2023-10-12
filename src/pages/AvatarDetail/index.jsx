@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import useFetch from 'hooks/useFetch';
 import { useEffect } from 'react';
 import { isNotNull } from 'utils/isNotNull';
-import LandingPage from 'pages/LandingPage';
+import Loading from '../../components/Loading';
 export default function AvatarDetailPage() {
   let { id } = useParams();
   const { isLoading, fetch, data } = useFetch({
@@ -14,6 +14,5 @@ export default function AvatarDetailPage() {
   useEffect(() => {
     fetch();
   }, [id]);
-  console.log(data);
-  return <>{!isLoading && isNotNull(data) ? <AvatarDetail data={data} /> : <LandingPage />}</>;
+  return <>{!isLoading && isNotNull(data) ? <AvatarDetail data={data} /> : <Loading />}</>;
 }

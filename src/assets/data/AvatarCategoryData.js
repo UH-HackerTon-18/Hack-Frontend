@@ -13,12 +13,15 @@ export const AvatarCategoryData = [
         value:"gender"
     },
     {
-        job:"직업",
+        name:"직업",
         value:"job"
     },{
   
         name:"성격",
         value:"character"
-    },
+    },{
+        name:"배경",
+        value:"background_story"
+    }
    
 ]

@@ -2,6 +2,7 @@ import color from 'styles/color';
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
+  position: sticky;
   width: 100%;
   min-height: 9vh;
   border-bottom: 1px solid ${color.gray[200]};

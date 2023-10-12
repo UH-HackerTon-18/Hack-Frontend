@@ -24,6 +24,11 @@ export const imgboxWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    img{
+        width:100%;
+    height:100%;
+    object-fit:cover;
+    }
 `
 
 export const imgWrapper = styled.div`
