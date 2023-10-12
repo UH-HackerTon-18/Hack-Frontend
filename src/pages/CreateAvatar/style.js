@@ -61,7 +61,7 @@ export const SubTitle2 = styled.div`
 
 export const WorldTypeWrapper = styled.div`
   width: 100%;
-  height: 30.5vh;
+  height: 42vh;
   flex-shrink: 0;
   border-radius: 10px;
   background: #fff;
@@ -70,6 +70,7 @@ export const WorldTypeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const WorldTypeBox = styled.div`
@@ -87,7 +88,7 @@ export const WorldTypeTitle = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.3rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
   font-weight: 600;
 `;
 
@@ -161,7 +162,7 @@ export const Option = styled.div`
 
 export const CharacterInfo = styled.div`
   width: 100%;
-  height: 1500px;
+  height: 1350px;
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);

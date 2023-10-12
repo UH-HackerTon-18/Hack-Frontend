@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { REACT_APP_BASE_URL } from 'constants/config';
+const REACT_APP_BASE_URL = process.env.REACT_APP_API_URL;
 
 const instance = axios.create({
   baseURL: REACT_APP_BASE_URL,
@@ -56,7 +56,7 @@ instance.interceptors.response.use(
     };
 
     if (status === 403) {
-      window.location.reload();
+      // window.location.reload();
       handleAccessTokenRequest();
     }
 
