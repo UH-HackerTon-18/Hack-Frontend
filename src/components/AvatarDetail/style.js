@@ -29,7 +29,6 @@ export const imgboxWrapper = styled.div`
 export const imgWrapper = styled.div`
     overflow: hidden;
     border-radius: 5px;
-    background-color: aqua;
     width: 360px;
     height: 360px;
     justify-content: center;
