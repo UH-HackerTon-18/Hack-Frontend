@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './style';
 import plusIcon from 'assets/plusBtn.svg';
 import instance from 'apis/httpClient';
+import { useMutation } from 'react-query';
 
 const CreateAvartar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -63,6 +64,18 @@ const CreateAvartar = () => {
 
   const trueGender = gender === '0' ? '여성' : '남성';
 
+  const postCode = async (userInfo) => {
+    await instance.post('http://192.168.199.171:3000/characters/', userInfo);
+  };
+
+  const { mutate, isLoading } = useMutation(postCode, {
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
+
+  if (isLoading) return 'Loading...';
+
   const generated = async () => {
     try {
       const userInfo = {
@@ -80,7 +93,7 @@ const CreateAvartar = () => {
         },
       };
 
-      console.log('userInfo', userInfo);
+      mutate(userInfo);
     } catch (error) {}
   };
 
