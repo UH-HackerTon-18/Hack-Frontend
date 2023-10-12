@@ -1,10 +1,17 @@
+import Header from 'components/Header';
+import CheckPersonal from 'pages/CheckPersonal';
+import CreateAvartar from 'pages/CreateAvatar';
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <Routes>{/* <Route path="" element={ } /> */}</Routes>
+      <Header />
+      <Routes>
+        {/* <Route path='/' element={<CheckPersonal />} />
+        <Route path='/createAvartar' element={<CreateAvartar />} /> */}
+      </Routes>
     </BrowserRouter>
   );
 }

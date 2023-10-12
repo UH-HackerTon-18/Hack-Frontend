@@ -1,5 +1,5 @@
-import React from "react";
-import * as S from "./style";
+import React from 'react';
+import * as S from './style';
 
 function Button({
   width,
@@ -13,7 +13,7 @@ function Button({
   margin,
   onClick,
   fontSize,
-  border
+  border,
 }) {
   return (
     <S.Button

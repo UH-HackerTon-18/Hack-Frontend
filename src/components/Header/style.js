@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   min-height: 9vh;
   border-bottom: 1px solid ${color.gray[200]};
+  background-color: white;
 `;
 
 export const HeaderLogoWrapper = styled.div`
@@ -25,4 +26,8 @@ export const NavigateTextWrapper = styled.div`
   width: 912px;
   min-height: 9vh;
   margin-left: 5.5%;
+`;
+
+export const ImgLogo = styled.img`
+  cursor: pointer;
 `;
