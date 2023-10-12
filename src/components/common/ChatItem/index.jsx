@@ -8,10 +8,11 @@ export function ChatWrapper({ value }) {
     )
 }
 
-export function BotChatWrapper({ name, value }) {
+export function BotChatWrapper({ name, value, src }) {
     return (
         <S.botChatBoxWrapper>
             <S.botImageWrapper>
+                <img src={src} />
             </S.botImageWrapper>
             <S.ChatInformationWrapper>
                 <S.BotName>{name}</S.BotName>
@@ -21,10 +22,11 @@ export function BotChatWrapper({ name, value }) {
     )
 }
 
-export function MyBotChatWrapper({ name, value }) {
+export function MyBotChatWrapper({ name, value, src }) {
     return (
         <S.myBotChatBoxWrapper>
             <S.botImageWrapper>
+                <img src={src} />
             </S.botImageWrapper>
             <S.ChatInformationWrapper>
                 <S.BotName>{name}</S.BotName>
