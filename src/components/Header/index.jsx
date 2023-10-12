@@ -6,7 +6,6 @@ import useModal from 'hooks/useModal';
 
 const Header = () => {
   const navigate = useNavigate();
-
   const { openModal, closeModal } = useModal();
 
   const modalOpen = () => {

@@ -32,6 +32,7 @@ export const NavigateTextWrapper = styled.div`
 `;
 
 export const ImgLogo = styled.img`
+  height: 4vh;
   cursor: pointer;
 `;
 

@@ -5,7 +5,7 @@ export default function IdChat() {
     return (
         <S.Container>
             <Container>
-                <S.IdChatWrapper>fghy54e</S.IdChatWrapper>
+                <S.IdChatWrapper></S.IdChatWrapper>
             </Container>
         </S.Container>
     );
