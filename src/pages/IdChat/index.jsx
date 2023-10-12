@@ -1,11 +1,11 @@
-import Container from "components/common/Container"
-import * as S from "./style"
+import Container from 'components/common/Container';
+import * as S from './style';
 export default function IdChat() {
-    return (
-        <Container>
-            <S.IdChatWrapper>
-                fghy54e
-            </S.IdChatWrapper>
-        </Container>
-    )
+  return (
+    <S.Container>
+      <Container>
+        <S.IdChatWrapper>fghy54e</S.IdChatWrapper>
+      </Container>
+    </S.Container>
+  );
 }
