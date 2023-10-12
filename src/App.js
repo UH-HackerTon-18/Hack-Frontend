@@ -1,10 +1,13 @@
 import GlobalStyle from './styles/globalStyle';
+import { RecoilRoot } from 'recoil'
 import Router from 'router';
 function App() {
   return (
     <>
-      <GlobalStyle />
+     <RecoilRoot>
+     <GlobalStyle />
       <Router />
+     </RecoilRoot>
     </>
   );
 }

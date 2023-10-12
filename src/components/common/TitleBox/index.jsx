@@ -5,6 +5,7 @@ export default function TitleBox({ title, subTitle, subTitleVisible = true }) {
         <S.TitleBoxWrapper>
             <S.TitleWrapper>{title}</S.TitleWrapper>
             {subTitleVisible ? <S.SubTitleWrapper>{subTitle}</S.SubTitleWrapper> : null}
+            <S.Line />
         </S.TitleBoxWrapper>
     )
 }
