@@ -161,7 +161,7 @@ export const Option = styled.div`
 
 export const CharacterInfo = styled.div`
   width: 100%;
-  height: 1445px;
+  height: 1500px;
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -198,6 +198,14 @@ export const GenderWrapper2 = styled.div`
   width: 80%;
   margin: 0 auto;
   height: 15vh;
+  display: flex;
+  align-items: center;
+`;
+
+export const GenderWrapper5 = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  height: 10vh;
   display: flex;
   align-items: center;
 `;

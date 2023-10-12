@@ -6,9 +6,14 @@ const CreateAvartar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [selectedGender, setSelectedGender] = React.useState('');
+  const [worldText, setWorldText] = React.useState('');
 
   const handleGenderChange = (event) => {
     setSelectedGender(event.target.id);
+  };
+
+  const worldChange = (e) => {
+    setWorldText(e.target.value);
   };
 
   return (
@@ -26,7 +31,7 @@ const CreateAvartar = () => {
               세계관 작성<S.Star>*</S.Star>
             </S.WorldTypeTitle>
             <S.WorldTextInputWrapper>
-              <S.InputText type='text' />
+              <S.InputText type='text' onChange={worldChange} />
             </S.WorldTextInputWrapper>
           </S.WorldTypeBox>
         </S.WorldTypeWrapper>
@@ -52,13 +57,19 @@ const CreateAvartar = () => {
               </S.GenderWrapper>
               <S.GenderWrapper2>
                 <div>
-                  <S.TextSubTitle>나이</S.TextSubTitle>
+                  <S.TextSubTitle>캐릭터 수</S.TextSubTitle>
                   <S.Input type='number' min='1' max='100' />
                 </div>
               </S.GenderWrapper2>
               <S.GenderWrapper2>
                 <div>
-                  <S.TextSubTitle>성별</S.TextSubTitle>
+                  <S.TextSubTitle>나이</S.TextSubTitle>
+                  <S.Input type='number' min='1' max='100' />
+                </div>
+              </S.GenderWrapper2>
+              <S.GenderWrapper5>
+                <div>
+                  <S.TextSubTitle>종족</S.TextSubTitle>
                   <S.optionBox>
                     <span style={{ marginRight: '5px' }}>인간</span>
                     <S.StyledRadio type='radio' name='ratio' id='1' onClick={handleGenderChange} />
@@ -68,7 +79,7 @@ const CreateAvartar = () => {
                     <S.Input2 type='text' />
                   </S.optionBox>
                 </div>
-              </S.GenderWrapper2>
+              </S.GenderWrapper5>
               {selectedGender === '2' && (
                 <S.GenderWrapper4>
                   <S.TextSubTitle2>화풍</S.TextSubTitle2>
