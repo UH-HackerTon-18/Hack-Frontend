@@ -9,8 +9,8 @@ export default function Router() {
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* <Route path='/' element={<CheckPersonal />} />
-        <Route path='/createAvartar' element={<CreateAvartar />} /> */}
+        <Route path='/' element={<CheckPersonal />} />
+        <Route path='/createAvartar' element={<CreateAvartar />} />
       </Routes>
     </BrowserRouter>
   );

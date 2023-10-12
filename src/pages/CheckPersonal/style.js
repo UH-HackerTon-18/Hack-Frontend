@@ -121,8 +121,31 @@ export const StyledRadio = styled.input`
   margin-right: 8px;
   cursor: pointer;
   border-radius: 3px;
+  background-color: ${(props) => (props.checked ? 'black' : 'transparent')};
+`;
 
-  &:checked {
-    background-color: black;
-  }
+export const ImgWrapper = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: ${color.gray[200]};
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+`;
+
+export const ContentsWrapper = styled.div`
+  width: 225px;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+`;
+
+export const Text = styled.div`
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 12px;
 `;

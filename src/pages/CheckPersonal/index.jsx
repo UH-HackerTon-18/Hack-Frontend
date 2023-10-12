@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './style';
 import { Button } from 'antd';
 import color from 'styles/color';
+import alart from 'assets/alert.svg';
 
 export const dummy_data = [
   {
@@ -37,6 +38,14 @@ export const dummy_data = [
 ];
 
 const CheckPersonal = () => {
+  const [isClicked, setIsClicked] = React.useState([false, false, false, false, false]);
+
+  const onClickId = (id) => {
+    setIsClicked((prev) => prev.map((item, index) => (index === id ? !item : item)));
+  };
+
+  const showButton = isClicked.some((value) => value === true);
+
   return (
     <S.Container>
       <S.GenerateBox>
@@ -53,23 +62,48 @@ const CheckPersonal = () => {
                   <S.CharacterName>{data.name}</S.CharacterName>
                 </S.CharacterImgBox>
                 <S.OptionTag>
-                  <S.StyledRadio type='radio' name='ratio' />
+                  <S.StyledRadio
+                    type='radio'
+                    id={`${data.id}`}
+                    onClick={() => onClickId(data.id)}
+                    checked={isClicked[data.id]}
+                  />
                 </S.OptionTag>
               </S.CharacterWrapper>
             </S.CharacterBox>
           ))}
         </S.CharacterMapWrapper>
         <S.ButtonBox>
-          <Button
-            style={{
-              width: '220px',
-              height: '50px',
-              backgroundColor: `${color.black[200]}`,
-              border: 'none',
-            }}
-          >
-            <span style={{ color: 'fff', fontSize: '15px', fontWeight: '500' }}>대화 시뮬레이션</span>
-          </Button>
+          {showButton === true ? (
+            <Button
+              style={{
+                width: '220px',
+                height: '50px',
+                backgroundColor: `${color.black[200]}`,
+                border: 'none',
+              }}
+            >
+              <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>대화 시뮬레이션</span>
+            </Button>
+          ) : (
+            <Button
+              style={{
+                width: '220px',
+                height: '50px',
+                backgroundColor: `${color.gray[400]}`,
+                border: 'none',
+                cursor: 'auto',
+              }}
+            >
+              <span style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>대화 시뮬레이션</span>
+            </Button>
+          )}
+          <S.ContentsWrapper>
+            <S.ImgWrapper>
+              <img src={alart} alt='' />
+            </S.ImgWrapper>
+            <S.Text>아바타끼리 대화를 시킬 수 있어요</S.Text>
+          </S.ContentsWrapper>
         </S.ButtonBox>
       </S.GenerateBox>
     </S.Container>
