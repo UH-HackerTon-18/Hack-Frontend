@@ -41,6 +41,11 @@ const Header = () => {
           <S.TextBox>
             <S.Text onClick={modalOpen}>오픈 API 사용하기</S.Text>
           </S.TextBox>
+          <S.TextBox>
+            <S.Text onClick={() => {
+              navigate('/avatar/chat')
+            }}>id로 채팅하기</S.Text>
+          </S.TextBox>
         </S.NavigateTextWrapper>
       </S.HeaderTextWrapper>
     </S.HeaderWrapper>
