@@ -3,6 +3,7 @@ import * as S from './style'
 import Button from 'components/common/Button'
 import { AvatarCategoryData } from 'assets/data/AvatarCategoryData'
 import Container from 'components/common/Container'
+import { useNavigate } from 'react-router-dom'
 
 function Category({ title, data }) {
 
@@ -17,7 +18,9 @@ function Category({ title, data }) {
 
 
 export default function AvatarDetail({ data }) {
-    const { id, relation } = data;
+    const { id, relation, profile_image_url } = data;
+    const navigate = useNavigate();
+
 
     return (
         <Container>
@@ -27,7 +30,7 @@ export default function AvatarDetail({ data }) {
             />
             <S.imgboxWrapper>
                 <S.imgWrapper>
-                    <img src="aa" alt='' />
+                    <img src={`${profile_image_url}`} alt='a' />
                 </S.imgWrapper>
             </S.imgboxWrapper>
             <S.subTitle>아바타 소개</S.subTitle>
@@ -50,7 +53,7 @@ export default function AvatarDetail({ data }) {
                     fontSize="18px"
                     borderRadius="5"
                     border="none"
-                    onClick={() => { }}
+                    onClick={() => { navigate(`/avatar/${id}/chat`) }}
                 >채팅하기</Button>
                 <Button
                     backgroundColor="#FFF"

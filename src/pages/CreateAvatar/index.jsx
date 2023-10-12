@@ -3,6 +3,8 @@ import * as S from './style';
 import plusIcon from 'assets/plusBtn.svg';
 import instance from 'apis/httpClient';
 import { useMutation } from 'react-query';
+import LoadingPage from 'pages/LodingPage';
+import { toast } from 'react-toastify';
 
 const CreateAvartar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -68,13 +70,16 @@ const CreateAvartar = () => {
     await instance.post('http://192.168.199.171:3000/characters/', userInfo);
   };
 
-  const { mutate, isLoading } = useMutation(postCode, {
+  const { mutate, isLoading, isError } = useMutation(postCode, {
     onSuccess: (data) => {
       console.log(data);
     },
+    onError: () => {
+      toast.success('캐릭터 생성 완료!');
+    },
   });
 
-  if (isLoading) return 'Loading...';
+  if (isLoading) return <LoadingPage />;
 
   const generated = async () => {
     try {
