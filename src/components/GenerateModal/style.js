@@ -42,4 +42,5 @@ export const WhenText = styled.div`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  font-size: 12px;
 `;
