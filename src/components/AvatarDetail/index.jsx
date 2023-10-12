@@ -15,9 +15,10 @@ function Category({ title, data }) {
     )
 }
 
-function RelationBotItem({ id, profile_image_url, name, explain, navigate }) {
+function RelationBotItem({ id, profile_image_url, name, explain }) {
+    const navigate = useNavigate();
     return (
-        <S.RelationBotItemWrapper onClick={() => navigate(`avatar/${id}`)}>
+        <S.RelationBotItemWrapper onClick={() => navigate(`/avatar/${id}`)}>
             <S.RelationImgWrapper>
                 <img src={profile_image_url} alt='실패' />
             </S.RelationImgWrapper>
@@ -67,7 +68,7 @@ export default function AvatarDetail({ data }) {
                     <S.relationWrapper>
                         {
                             relation.map((i) => (
-                                <RelationBotItem id={i.id} profile_image_url={i.profile_image_url} name={i.name} explain={i.explain} navigate={navigate} />
+                                <RelationBotItem id={i.id} profile_image_url={i.profile_image_url} name={i.name} explain={i.explain} />
                             ))
                         }
                     </S.relationWrapper>
