@@ -58,7 +58,6 @@ box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
     justify-content: center;
     white-space: normal;
  width: 518px;
- background-color: aliceblue;
 overflow-wrap: break-word;
 border: none;
     resize: none;

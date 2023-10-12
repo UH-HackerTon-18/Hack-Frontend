@@ -12,13 +12,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ChatWrapper, BotChatWrapper } from "components/common/ChatItem";
 
 
-export default function ChatBox() {
+export default function ChatBox({ id }) {
     const [AiState, setAiState] = useRecoilState(avatarState);
 
     const [chatList, setChatList] = useState([]);
     const [chatInput, setchatInput] = useState('');
     const navigate = useNavigate();
-    let { id } = useParams();
 
     const sendMessage = () => {
         const date = new Date();
