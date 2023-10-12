@@ -68,7 +68,7 @@ const CreateAvartar = () => {
   const trueGender = gender === '0' ? '여성' : '남성';
 
   const instance = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: 'http://192.168.7.111:3000/characters',
     timeout: 120000,
   });
 
@@ -213,14 +213,13 @@ const CreateAvartar = () => {
           </S.CharacterInfo>
         ) : (
           <>
-            <S.PlusTextWrapper onClick={() => {
-              setIsOpen(true);
-            }}>
+            <S.PlusTextWrapper
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               <S.PlusText>
-                <S.PlusImg
-                  src={plusIcon}
-                  alt=''
-                />
+                <S.PlusImg src={plusIcon} alt='' />
                 <S.Option>캐릭터 상세 설정 추가</S.Option>
               </S.PlusText>
             </S.PlusTextWrapper>
