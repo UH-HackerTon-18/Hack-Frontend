@@ -3,8 +3,11 @@ import * as S from './style';
 import Logo from 'assets/mirror.svg';
 import Button from '../../components/common/Button';
 import MainPageImg from 'assets/Rectangle.svg';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.TitleWrapper>
@@ -25,6 +28,9 @@ const LandingPage = () => {
                 borderRadius={10}
                 border={'none'}
                 fontSize={19}
+                onClick={() => {
+                  navigate('/createAvartar');
+                }}
               >
                 아바타 만들러 가기
               </Button>

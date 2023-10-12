@@ -1,13 +1,15 @@
+import Modal from 'components/Modal';
 import GlobalStyle from './styles/globalStyle';
-import { RecoilRoot } from 'recoil'
+import { RecoilRoot } from 'recoil';
 import Router from 'router';
 function App() {
   return (
     <>
-     <RecoilRoot>
-     <GlobalStyle />
-      <Router />
-     </RecoilRoot>
+      <RecoilRoot>
+        <Modal />
+        <GlobalStyle />
+        <Router />
+      </RecoilRoot>
     </>
   );
 }
