@@ -140,6 +140,7 @@ export const PlusTextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
+  cursor: pointer;
 `;
 
 export const PlusText = styled.div`

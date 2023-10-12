@@ -213,14 +213,13 @@ const CreateAvartar = () => {
           </S.CharacterInfo>
         ) : (
           <>
-            <S.PlusTextWrapper>
+            <S.PlusTextWrapper onClick={() => {
+              setIsOpen(true);
+            }}>
               <S.PlusText>
                 <S.PlusImg
                   src={plusIcon}
                   alt=''
-                  onClick={() => {
-                    setIsOpen(true);
-                  }}
                 />
                 <S.Option>캐릭터 상세 설정 추가</S.Option>
               </S.PlusText>
