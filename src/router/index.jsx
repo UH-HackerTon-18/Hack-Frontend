@@ -6,8 +6,9 @@ export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='/:id/chat' element={<P.Chat />} />
                 <Route path='/avatar' element={<P.CreateAvatar />} />
-                <Route path="/avatar/detail/:id" element={<P.AvatarDetail />} />
+                <Route path="/avatar/:id/detail" element={<P.AvatarDetail />} />
             </Routes>
         </BrowserRouter>
     );

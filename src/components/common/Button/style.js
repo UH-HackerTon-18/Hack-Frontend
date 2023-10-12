@@ -15,5 +15,6 @@ export const Button = styled.button`
   margin: ${props => props.margin};
   outline: none;
   cursor: pointer;
+  
 `;
 

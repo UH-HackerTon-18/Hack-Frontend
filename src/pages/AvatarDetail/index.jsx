@@ -7,7 +7,7 @@ export default function AvatarDetailPage() {
     let { id } = useParams();
     const { isLoading, fetch, data } = useFetch({
         method: 'get',
-        url: `/world/${id}`
+        url: `/${id}`
     });
 
     useEffect(() => {
