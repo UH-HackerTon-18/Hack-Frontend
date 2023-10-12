@@ -9,10 +9,11 @@ export default function Router() {
       <Header />
       <Routes>
         <Route path='avatar/:id/chat' element={<P.Chat />} />
-        <Route path="avatar/:id" element={<P.AvatarDetail />} />
-        <Route path="/avatar/chat/:id_1/:id_2" element={<P.AvatarChat />} />
+        <Route path='avatar/:id' element={<P.AvatarDetail />} />
+        <Route path='/avatar/chat/:id_1/:id_2' element={<P.AvatarChat />} />
         <Route path='/' element={<P.LandingPage />} />
         <Route path='/completeAvartar:id' element={<P.CheckPersonal />} />
+        <Route path='/createAvartar' element={<P.CreateAvartar />} />
       </Routes>
     </BrowserRouter>
   );

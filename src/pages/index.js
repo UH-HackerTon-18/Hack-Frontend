@@ -4,4 +4,5 @@ export { default as Chat } from './Chat';
 export { default as CheckPersonal } from './CheckPersonal';
 export { default as CreateAvartar } from './CreateAvatar';
 export { default as LandingPage } from './LandingPage';
-export { default as AvatarChat } from './AvatarChat'
+export { default as AvatarChat } from './AvatarChat';
+
