@@ -3,7 +3,7 @@ import * as S from './style';
 import { Button } from 'antd';
 import color from 'styles/color';
 import alart from 'assets/alert.svg';
-import instance from 'apis/httpClient';
+import instance from 'apis';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const CheckPersonal = () => {
@@ -13,7 +13,7 @@ const CheckPersonal = () => {
 
   const onClickId = (index) => {
     setCheckNum(index);
-    setIsClicked((prev) => prev.map((item, idx) => idx === index));
+    setIsClicked((prev) => prev.map((_, idx) => idx === index));
   };
 
   const showButton = isClicked.some((value) => value === true);
@@ -21,7 +21,7 @@ const CheckPersonal = () => {
   const world_id = useParams();
 
   useEffect(() => {
-    instance.get(`http://192.168.7.115:3000/characters/world/${world_id.id}`).then((res) => {
+    instance.get(`/world/${world_id.id}`).then((res) => {
       setUserData(res.data.characters);
     });
   }, []);
@@ -90,10 +90,6 @@ const CheckPersonal = () => {
               </Button>
             )}
             <S.ContentsWrapper>
-              <S.ImgWrapper>
-                <img src={alart} alt='' />
-              </S.ImgWrapper>
-              <S.Text>아바타끼리 대화를 시킬 수 있어요</S.Text>
             </S.ContentsWrapper>
           </S.ButtonBox>
         </S.GenerateBox>

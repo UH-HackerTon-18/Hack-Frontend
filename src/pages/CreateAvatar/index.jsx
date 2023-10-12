@@ -68,7 +68,7 @@ const CreateAvartar = () => {
   const trueGender = gender === '0' ? '여성' : '남성';
 
   const instance = axios.create({
-    baseURL: 'http://192.168.7.115:3000/characters',
+    baseURL: process.env.REACT_APP_BASE_URL,
     timeout: 120000,
   });
 
