@@ -16,7 +16,14 @@ const Header = () => {
             }}
           />
         </S.HeaderLogoWrapper>
-        <S.NavigateTextWrapper></S.NavigateTextWrapper>
+        <S.NavigateTextWrapper>
+          <S.TextBox>
+            <S.Text>아바타 만들기</S.Text>
+          </S.TextBox>
+          <S.TextBox>
+            <S.Text>오픈 API 사용하기</S.Text>
+          </S.TextBox>
+        </S.NavigateTextWrapper>
       </S.HeaderTextWrapper>
     </S.HeaderWrapper>
   );
