@@ -9,7 +9,7 @@ export default function Router() {
       <Header />
       <Routes>
         <Route path='/' element={<P.LandingPage />} />
-        <Route path='/completeAvartar' element={<P.CheckPersonal />} />
+        <Route path='/completeAvartar:id' element={<P.CheckPersonal />} />
         <Route path='/createAvartar' element={<P.CreateAvartar />} />
         <Route path='/:id/chat' element={<P.Chat />} />
         <Route path='/avatar/:id/detail' element={<P.AvatarDetail />} />
