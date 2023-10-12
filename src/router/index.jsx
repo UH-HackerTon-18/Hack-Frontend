@@ -11,10 +11,11 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<CheckPersonal />} />
+        <Route path='/avatar' element={<CheckPersonal />} />
         <Route path='/createAvartar' element={<CreateAvartar />} />
-        <Route path='/:id/chat' element={<P.Chat />} />
-        <Route path="/avatar/:id/detail" element={<P.AvatarDetail />} />
+        <Route path='avatar/:id/chat' element={<P.Chat />} />
+        <Route path="avatar/:id" element={<P.AvatarDetail />} />
+        <Route path="/avatar/chat/:id_1/:id_2" element={<P.AvatarChat />} />
       </Routes>
     </BrowserRouter>
   );

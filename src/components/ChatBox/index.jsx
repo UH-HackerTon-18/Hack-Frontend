@@ -9,27 +9,8 @@ import { avatarState } from "store/atoms";
 import TextareaAutosize from 'react-textarea-autosize';
 import outSvg from "../../assets/out.svg"
 import { useNavigate, useParams } from "react-router-dom";
+import { ChatWrapper, BotChatWrapper } from "components/common/ChatItem";
 
-function ChatWrapper({ value }) {
-    return (
-        <S.UserChatWrapper>
-            <S.ChatWrapper escapeXml="false" backgroundColor="#272727" color="#fff" >{value}</S.ChatWrapper>
-        </S.UserChatWrapper>
-    )
-}
-
-function BotChatWrapper({ name, value }) {
-    return (
-        <S.botChatBoxWrapper>
-            <S.botImageWrapper>
-            </S.botImageWrapper>
-            <S.ChatInformationWrapper>
-                <S.BotName>{name}</S.BotName>
-                <S.ChatWrapper color="#272727" fontSize="16px" >{value}</S.ChatWrapper>
-            </S.ChatInformationWrapper>
-        </S.botChatBoxWrapper>
-    )
-}
 
 export default function ChatBox() {
     const [AiState, setAiState] = useRecoilState(avatarState);
@@ -50,7 +31,7 @@ export default function ChatBox() {
     }
 
     const outPage = () => {
-        navigate(`/${id}/detail`);
+        navigate(`/avatar/${id}`);
     }
 
     return (
