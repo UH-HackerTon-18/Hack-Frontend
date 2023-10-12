@@ -2,6 +2,7 @@ import Header from 'components/Header';
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import * as P from '../pages';
+import Footer from 'components/common/footer';
 
 export default function Router() {
   return (
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path='/completeAvartar:id' element={<P.CheckPersonal />} />
         <Route path='/createAvartar' element={<P.CreateAvartar />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
