@@ -274,7 +274,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Button = styled.div`
-  width: 450px;
+  width: 70%;
   height: 60px;
   flex-shrink: 0;
   border-radius: 10px;
@@ -284,6 +284,7 @@ export const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
   cursor: pointer;
   &:hover {
     background-color: black;
