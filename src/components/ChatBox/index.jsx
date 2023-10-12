@@ -54,6 +54,17 @@ export default function ChatBox({ id, name, src }) {
         navigate(`/avatar/${id}`);
     }
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter' && e.shiftKey) {
+            setchatInput(chatInput + '\n')
+            console.log("Senter")
+
+        } else if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    };
+
     return (
         <Container>
             <S.ChatBoxWrapper>
@@ -67,7 +78,7 @@ export default function ChatBox({ id, name, src }) {
                     }
                 </S.ChatListWrapper>
                 <S.ChatInputWrapper>
-                    <TextareaAutosize className="ChatInput" maxRows={6} minRows={1} cacheMeasurements={true} value={chatInput} onChange={(e) => { setchatInput(e.target.value) }} />
+                    <TextareaAutosize className="ChatInput" onKeyDown={handleKeyPress} maxRows={6} minRows={1} cacheMeasurements={true} value={chatInput} onChange={(e) => { setchatInput(e.target.value) }} />
                     <Button
                         width="40"
                         height="40"
