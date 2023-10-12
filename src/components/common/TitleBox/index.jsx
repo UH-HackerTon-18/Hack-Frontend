@@ -1,10 +1,10 @@
 import * as S from './style'
 
-export default function TitleBox({ title, subTitle }) {
+export default function TitleBox({ title, subTitle, subTitleVisible = true }) {
     return (
         <S.TitleBoxWrapper>
             <S.TitleWrapper>{title}</S.TitleWrapper>
-            <S.SubTitleWrapper>{subTitle}</S.SubTitleWrapper>
+            {subTitleVisible ? <S.SubTitleWrapper>{subTitle}</S.SubTitleWrapper> : null}
         </S.TitleBoxWrapper>
     )
 }

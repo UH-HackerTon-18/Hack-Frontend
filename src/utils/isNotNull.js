@@ -1,0 +1,1 @@
+export const isNotNull = (value) => (value ? true : false)
